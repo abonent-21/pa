@@ -29,7 +29,6 @@ int main(int argc, char** argv) {
     if (newcomm != MPI_COMM_NULL) {
         int newrank, newsize;
         MPI_Comm_rank(newcomm, &newrank);
-        MPI_Comm_size(newcomm, &newsize);
 
         float *min_data = NULL;
         if (newrank == 0) min_data = (float*)malloc(N * sizeof(float));
