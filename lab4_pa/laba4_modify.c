@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
         // For accurate measurement, loop if N small
         int iterations = (N < 1000) ? 10000 : 1; // Adjust
         for (int it = 0; it < iterations; it++) {
-            MPI_Reduce((rank % 2 == 0) ? data : NULL, min_data, N, MPI_FLOAT, MPI_MIN, 0, newcomm);
+            MPI_Reduce((data, min_data, N, MPI_FLOAT, MPI_MIN, 0, newcomm);
         }
 
         if (newrank == 0) {
